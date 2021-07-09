@@ -1,0 +1,13 @@
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessEntity\bin\Debug\OCBC.BusinessEntity.dll.config
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessEntity\bin\Debug\OCBC.BusinessEntity.dll
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessEntity\bin\Debug\OCBC.BusinessEntity.pdb
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessEntity\bin\Debug\EntityFramework.dll
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessEntity\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessEntity\bin\Debug\EntityFramework.xml
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessEntity\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessEntity\obj\Debug\OCBC.BusinessEntity.csproj.CoreCompileInputs.cache
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessEntity\obj\Debug\OCBC.BusinessEntity.csproj.CopyComplete
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessEntity\obj\Debug\OCBC.BusinessEntity.dll
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessEntity\obj\Debug\OCBC.BusinessEntity.pdb
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessEntity\bin\Debug\AesEncryptDecrypt.dll
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessEntity\obj\Debug\OCBC.BusinessEntity.csprojAssemblyReference.cache

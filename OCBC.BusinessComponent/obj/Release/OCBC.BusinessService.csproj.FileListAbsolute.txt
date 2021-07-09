@@ -1,0 +1,12 @@
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessComponent\bin\Release\OCBC.BusinessComponent.dll
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessComponent\bin\Release\OCBC.BusinessComponent.pdb
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessComponent\bin\Release\OCBC.BusinessEntity.dll
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessComponent\bin\Release\OCBC.DataAccess.dll
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessComponent\bin\Release\OCBC.BusinessEntity.pdb
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessComponent\bin\Release\OCBC.BusinessEntity.dll.config
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessComponent\bin\Release\OCBC.DataAccess.pdb
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessComponent\obj\Release\OCBC.BusinessService.csprojAssemblyReference.cache
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessComponent\obj\Release\OCBC.BusinessService.csproj.CoreCompileInputs.cache
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessComponent\obj\Release\OCBC.BusinessService.csproj.CopyComplete
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessComponent\obj\Release\OCBC.BusinessComponent.dll
+D:\Projects\OpenSystemDemoOCBC\OCBC.BusinessComponent\obj\Release\OCBC.BusinessComponent.pdb

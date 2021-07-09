@@ -1,0 +1,11 @@
+D:\Projects\OpenSystemDemoOCBC\OCBC.DataAccess\bin\Debug\OCBC.DataAccess.dll
+D:\Projects\OpenSystemDemoOCBC\OCBC.DataAccess\bin\Debug\OCBC.DataAccess.pdb
+D:\Projects\OpenSystemDemoOCBC\OCBC.DataAccess\bin\Debug\OCBC.BusinessEntity.dll
+D:\Projects\OpenSystemDemoOCBC\OCBC.DataAccess\bin\Debug\OCBC.BusinessEntity.pdb
+D:\Projects\OpenSystemDemoOCBC\OCBC.DataAccess\bin\Debug\OCBC.BusinessEntity.dll.config
+D:\Projects\OpenSystemDemoOCBC\OCBC.DataAccess\obj\Debug\OCBC.DataAccess.csprojAssemblyReference.cache
+D:\Projects\OpenSystemDemoOCBC\OCBC.DataAccess\obj\Debug\OCBC.DataAccess.csproj.CoreCompileInputs.cache
+D:\Projects\OpenSystemDemoOCBC\OCBC.DataAccess\obj\Debug\OCBC.DataAccess.csproj.CopyComplete
+D:\Projects\OpenSystemDemoOCBC\OCBC.DataAccess\obj\Debug\OCBC.DataAccess.dll
+D:\Projects\OpenSystemDemoOCBC\OCBC.DataAccess\obj\Debug\OCBC.DataAccess.pdb
+D:\Projects\OpenSystemDemoOCBC\OCBC.DataAccess\bin\Debug\AesEncryptDecrypt.dll
