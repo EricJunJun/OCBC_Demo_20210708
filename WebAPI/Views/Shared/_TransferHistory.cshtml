@@ -1,0 +1,31 @@
+﻿@model List<OCBC.BusinessEntity.TransferHistory>
+@{
+    Layout = null;
+    var TransferHistorylist = Model;
+}
+
+@{ if (Model == null) { return; }
+
+    <div class="container body-content">
+        <table class="table">
+            <caption>Transfer History</caption>
+            <thead>
+                <tr>
+                    <th>Transfer To</th>
+                    <th>Transfer Amount</th>
+                    <th>Transfer Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in TransferHistorylist)
+                {
+                    <tr>
+                        <td>@item.RecipientEmail</td>
+                        <td>@item.TransferAmount</td>
+                        <td>@item.TransferDate</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

@@ -1,0 +1,169 @@
+﻿@model OCBC.BusinessEntity.User
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@*@if (Request.IsAuthenticated)*@
+@if (ViewData["login"].ToString() == "True")
+{
+    <div class="row">
+        <br />
+        <br />
+        <span class="h3">Welcome @Model.FirstName @Model.LastName</span>
+        @Html.HiddenFor(m => m.Id)
+        @Html.HiddenFor(m => m.Balance)
+        <br />
+        <br />
+        <br />
+        <br />
+        <div>
+            <div class="input-group">
+                <form id="depositForm">
+                    <div class="row">
+                        <span class="input-group-addon">Balance</span>
+                        <input type="text" id="balance" class="form-control" disabled="disabled" value="@Model.Balance" />
+                    </div><br />
+                    <div class="row">
+                        <span class="input-group-addon">$</span>
+                        <input type="number" required="required" maxlength="6" placeholder="Amount cannot exceed 100,000.00." oninput="if(value.length>6)value=value.slice(0,6)" class="form-control" id="depositAmount">
+                        <input type="submit" value="Deposit" class="btn btn-primary" id="deposit" />
+                    </div><br />
+                </form>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div>
+            <form id="transferForm">
+                <div class="input-group">
+                    <div class="row">
+                        <span class="input-group-addon">Recipient Email</span>
+                        <input type="text" class="form-control" required="required" maxlength="20" oninput="if(value.length>20)value=value.slice(0,20)" id="recipientEmail" />
+                    </div><br />
+                    <div class="row">
+                        <span class="input-group-addon">$</span>
+                        <input type="number" class="form-control" required="required" maxlength="5" oninput="if(value.length>5)value=value.slice(0,5)" id="transferAmount" placeholder="Amount cannot exceed 10,000.00.">
+                        <input type="submit" value="Transfer" class="btn btn-primary" id="transfer" />
+                    </div><br />
+                </div>
+            </form>
+        </div>
+
+        <div id="message"></div>
+        <br />
+        @{
+            Html.RenderAction("RenderTransferHistoryPartialView", "Account");
+        }
+    </div>
+}
+else
+{
+    <div class="container body-content">
+        <h2>Introduction</h2>
+        <p>
+            The demo is to simply simulate the money transfer and deposite
+        </p>
+        <p>
+            User can register for the first time or login with existing account(email) and password to transfer or deposite the money.
+        </p>
+        <p><a class="btn btn-default" href="">Learn more &raquo;</a></p>
+    </div>
+}
+
+
+@section scripts
+{
+    <script>
+        var errors = [];
+
+        $("#deposit").click(function (e) {
+            $("#message").html('');
+            e.preventDefault();
+
+            if (parseFloat($("#depositAmount").val())<=0) {
+                setValidationMessageSummary("message", "Value should be greater than 0.")
+                return;
+            }
+            if (parseFloat($("#depositAmount").val())> 999999) {
+                setValidationMessageSummary("message", "Value should be less than 999999.")
+                return;
+            }
+           $.ajax({
+                    url: '@Url.Action("DepositMoney", "Account")',
+                    type: "POST",
+                    data: { userId: $("#Id").val(), amount: $("#depositAmount").val()},
+                    success: function (result) {
+                        if (result.HasError) {
+                            setValidationMessageSummary("message", result.Message);
+                        } else {
+                            $("#Balance").val(result.Balance);
+                            $("#balance").val(result.Balance);
+                            $("#depositAmount").val('');
+                            setSuccessMessage("message", result.Message)
+                        }
+                    }
+                });
+        });
+
+        $("#transfer").click(function (e) {
+            $("#message").html('');
+            e.preventDefault();
+
+            if (parseFloat($("#transferAmount").val()) <= 0) {
+                setValidationMessageSummary("message", "Value should be greater than 0.");
+                return;
+            }
+
+            if (parseFloat($("#transferAmount").val()) > parseFloat($("#Balance").val())) {
+                setValidationMessageSummary("message", "Cannot tranfer more than your balance value.")
+                return;
+            }
+
+           $.ajax({
+                    url: '@Url.Action("TransferMoney", "Account")',
+                    type: "POST",
+                    data: { senderId: $("#Id").val(), recipientEmail: $("#recipientEmail").val(), transferAmount: parseFloat($("#transferAmount").val()) },
+                    success: function (result) {
+                        if (result.HasError) {
+                            setValidationMessageSummary("message", result.Message);
+                        } else {
+                            $("#Balance").val(result.Balance);
+                            $("#balance").val(result.Balance);
+                            $("#transferAmount").val('');
+                            $("#recipientEmail").val('');
+                            setSuccessMessage("message", result.Message)
+                        }
+                    }
+                });
+           }
+        );
+
+
+        function setSuccessMessage(idName, messages) {
+            var html = "";
+            if (typeof (messages) != "object") {
+                html += "<div><span style=\"color\:green\">" + messages + "</span></div>";
+            } else {
+                $.each(messages, function (key, name) {
+                    html += "<div><span style=\"color\:green\">" + name + "</span></div>";
+                });
+            }
+            $('#' + idName).html(html);
+        }
+
+        function setValidationMessageSummary(idName, messages) {
+            var html = "";
+            if (typeof (messages) != "object") {
+                html += "<div><span style=\"color\:red\">" + messages + "</span></div>";
+            } else {
+                $.each(messages, function (key, name) {
+                    html += "<div><span style=\"color\:red\">" + name + "</span></div>";
+                });
+            }
+            $('#' + idName).html(html);
+        }
+
+
+    </script>
+}
